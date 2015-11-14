@@ -2,4 +2,9 @@
 layout: default
 title: Home
 ---
-
+{% for post in site.posts %}
+  <article> 
+    <h1> {{post.title}} </h1>
+    <p>{{post.desc}}</p>
+  </article>
+{% endfor %}

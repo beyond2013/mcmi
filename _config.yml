@@ -14,7 +14,7 @@ description: > # this means to ignore newlines until "baseurl:"
   MCMI provides services for diverse ranges of customers.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://yourdomain.com" # the base hostname & protocol for your site
-twitter_username: @MCMIasia
+twitter_username: atMCMIasia
 skype_username: MCM.International
 
 # Build settings
