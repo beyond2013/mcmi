@@ -8,10 +8,8 @@
 # Site settings
 title: Multiple Challenge Management International
 email: mcmi@domain.com
-description: > # this means to ignore newlines until "baseurl:"
-  MCMI plan, organize and implement professional development training programmes,
-  meetings, seminars, study visits, conferences, and sports & leisure activities.
-  MCMI provides services for diverse ranges of customers.
+description:  MCMI plan, organize and implement professional development training programmes
+keywords: Professional, development, training, programmes, meetings, seminar, study visits, conferences, sports, leasure
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://beyond2013.github.io/" # the base hostname & protocol for your site
 twitter_username: atMCMIasia

@@ -3,8 +3,10 @@ layout: default
 title: Home
 ---
 {% for post in site.posts %}
+  <div>
   <article> 
-    <h1> {{post.title}} </h1>
+    <h1 > {{post.title}} </h1>
     <p>{{post.desc}}</p>
   </article>
+  </div>
 {% endfor %}
