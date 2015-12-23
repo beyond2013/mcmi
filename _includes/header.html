@@ -1,65 +1,35 @@
-<header id="myCarousel" class="carousel slide">
-  <div>
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div id="container">
-        <div class="navbar-header">
-          <ul class="nav navbar-nav navbar-right">
-            {% for my_page in site.pages %}
-              {% if my_page.title %}
-                <li>
-                  <a href="{{ my_page.url | prepend: site.baseurl }}">
-          	        {{ my_page.title }}
-                  </a>
-                </li>
-              {% endif %}
-            {% endfor %}
-          </ul>
-        </div> <!-- /.nav navbar-nav navbar-right -->
-      </div> <!-- /.navbar-header -->
-    </nav>
-  </div> <!-- container -->
-  <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-            <li data-target="#myCarousel" data-slide-to="3"></li>
-        </ol>
-
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-            <div class="item active">
-                <div class="fill" style="background-image:url('{{ site.baseurl }}/assets/images/SlideOne');"></div>
-                <div class="carousel-caption">
-                    <h2>Event Management</h2>
-                </div>
-            </div>
-            <div class="item">
-                <div class="fill" style="background-image:url('{{ site.baseurl }}/assets/images/SlideTwo');"></div>
-                <div class="carousel-caption">
-                    <h2>Trainings</h2>
-                </div>
-            </div>
-            <div class="item">
-                <div class="fill" style="background-image:url('{{ site.baseurl }}/assets/images/SlideThree');"></div>
-                <div class="carousel-caption">
-                    <h2>Sports</h2>
-                </div>
-            </div>
-            <div class="item">
-                <div class="fill" style="background-image:url('{{ site.baseurl }}/assets/images/SlideFour');"></div>
-                <div class="carousel-caption">
-                    <h2>Leisure</h2>
-                </div>
+<!-- Navigation -->
+         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+          <div id="container">
+            <div class="navbar-header">
+              <ul class="nav navbar-nav navbar-right">
+                {% for my_page in site.pages %}
+                  {% if my_page.title %}
+                    <li>
+                      <a href="{{ my_page.url | prepend: site.baseurl }}">
+              	        {{ my_page.title }}
+                      </a>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            </div> <!-- /.nav navbar-nav navbar-right -->
+          </div> <!-- /.navbar-header -->
+        </nav>
+      </div> <!-- container -->  
+{% if page.title != "Home" %}
+<!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header"> {{page.title}}
+                    <!-- <small>Subheading</small> -->
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="{{ site.baseurl }}/index.html">Home</a>
+                    </li>
+                    <li class="active">{{ page.title }}</li>
+                </ol>
             </div>
         </div>
-
-        <!-- Controls -->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="icon-prev"></span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="icon-next"></span>
-        </a>
-
-</header>
+        <!-- /.row -->
+ {% endif %}
