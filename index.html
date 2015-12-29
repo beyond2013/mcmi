@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Home
+weight: 10
 ---
 <!-- Header Carousel -->
     <header id="myCarousel" class="carousel slide">
@@ -60,10 +61,10 @@ conferences, and sports and leisure activities. MCMI provides services
   </div>
 {% for post in site.posts %}
      <div class="col-md-6">
-      <div class="panel panel-default">
+      <div class="panel panel-primary">
         <article> 
         <div class="panel-heading">
-          <h4 > <i class="fa fa-fw fa-check"></i> {{post.title}} </h4>
+          <h3 > <!-- <i class="fa fa-fw fa-check"></i> -->{{post.title}} </h3>
         </div> <!-- panel-heading -->
         <div class="panel-body">
           <p>{{post.desc}}</p>

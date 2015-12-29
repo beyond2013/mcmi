@@ -1,15 +1,23 @@
 <!-- Navigation -->
-         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+         <nav class="navbar  navbar-default navbar-fixed-top" role="navigation">
           <div id="container">
             <div class="navbar-header">
               <ul class="nav navbar-nav navbar-right">
-                {% for my_page in site.pages %}
-                  {% if my_page.title %}
+              {% assign my_pages = site.pages | sort:"weight"  %}
+                {% for page in my_pages %}
+                  {% if page.title %}
                     <li>
-                      <a href="{{ my_page.url | prepend: site.baseurl }}">
-              	        {{ my_page.title }}
+                    {% if page.title == "Home" %}
+                      <a class ="navbar-brand" href="{{ page.url | prepend: site.baseurl }}">
+              	        {{ page.title }}
                       </a>
-                    </li>
+                       </li>
+                       {% else %}
+                       <a href="{{ page.url | prepend: site.baseurl }}">
+              	        {{ page.title }}
+                      </a>
+                      {% endif %}
+                   
                   {% endif %}
                 {% endfor %}
               </ul>
