@@ -16,7 +16,7 @@ weight: 10
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item active">
-                <div class="fill" style="background-image:url('{{ site.baseurl }}/assets/images/SlideOne');"></div>
+               <div class="fill" style="background-image:url('{{ site.baseurl }}/assets/images/SlideOne');"></div>
                 <div class="carousel-caption">
                     <h2>Event Management</h2>
                 </div>
@@ -59,18 +59,19 @@ conferences, and sports and leisure activities. MCMI provides services
  for diverse ranges of customers.
    </p>
   </div>
-{% for post in site.posts %}
-     <div class="col-md-6">
-      <div class="panel panel-primary">
-        <article> 
-        <div class="panel-heading">
-          <h3 > <!-- <i class="fa fa-fw fa-check"></i> -->{{post.title}} </h3>
-        </div> <!-- panel-heading -->
-        <div class="panel-body">
-          <p>{{post.desc}}</p>
-        </div> <!-- panel-body -->
-        </article>
-    </div> <!-- panel panel-default -->
-  </div> <!-- col-md-4 -->
- {% endfor %}
- </div> <!-- row -->
+   {% for post in site.posts %}
+   <div class="col-md-6">
+   <div class="panel panel-info"> 
+	   <div class="panel-heading">
+		   <div class="panel-title">
+
+	   <h3> {{ post.title }} </h3>
+		   </div> <!-- panel-title -->
+	   </div> <!-- panel-heading -->
+	   <div class="panel-body">
+	   <p> {{ post.desc }} </p>
+	   </div> <!-- panel-body -->
+
+   </div> <!-- panel panel-info -->
+   </div> <!-- col-md-6 -->
+   {% endfor %}
