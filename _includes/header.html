@@ -1,10 +1,22 @@
 <!-- Navigation -->
          <nav class="navbar navbar-static-top" role="navigation">
           <div id="container">
+           <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-              <ul class="nav nav-tabs navbar-right">
+		    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+		    <a class="navbar-brand" href="index.html">MCMI</a>
+	    </div><!-- navbar-header -->
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> 
+      	    <ul class="nav nav-tabs navbar-right">
               {% assign my_pages = site.pages | sort:"weight"  %}
                 {% for pages in my_pages %}
+		{%if pages.title != "Home" %}
                     {% if pages.url == page.url %}
 		    <li class="active" role="presentation">
                       <a href="{{ pages.url | prepend: site.baseurl }}" class="active">
@@ -18,11 +30,10 @@
                       </a>
 		      </li>
                       {% endif %}
-                   
+		      {% endif %} 
                 {% endfor %}
               </ul>
-            </div> <!-- /.nav navbar-nav navbar-right -->
-          </div> <!-- /.navbar-header -->
+          </div> <!-- /.collapse navbar-collapse -->
         </nav>
       </div> <!-- container -->  
 {% if page.title != "Home" %}
