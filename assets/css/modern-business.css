@@ -73,7 +73,9 @@ footer {
     margin: 50px 0;
 }
 
-/* Responsive Styles */
+h2,h3,h4{
+	text-transform: capitalize;
+}                                  /* Responsive Styles */
 
 @media(max-width:991px) {
     .customer-img,
@@ -90,4 +92,6 @@ footer {
     header.carousel .carousel {
         height: 70%;
     }
-}
+
+
+
