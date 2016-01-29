@@ -11,7 +11,7 @@ email: mcmi@domain.com
 description:  MCMI plan, organize and implement professional development training programmes
 keywords: Professional, development, training, programmes, meetings, seminar, study visits, conferences, sports, leasure
 baseurl: "/mcmi" # the subpath of your site, e.g. /blog
-url: "http://www.mcmi.asia/" # the base hostname & protocol for your site
+url: "http://beyond2013.github.io/" # the base hostname & protocol for your site
 twitter_username: atMCMIasia
 skype_username: MCM.International
 
