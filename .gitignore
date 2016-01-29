@@ -1,3 +1,7 @@
 *.*~
 cPanelCredentials.txt
 _site/
+Gemfile.lock
+.gitignore
+.jekyll-metadata
+*.html.swp
