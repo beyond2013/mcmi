@@ -39,28 +39,8 @@
 
     <!-- Script to Activate the Carousel -->
     <script>
-(function(){
-   $('.carousel').carousel({
-        interval: 3500 //changes the speed
-    });
-	 }());
-    (function(){
-		 $('.carousel .item').each(function(){
-			 var itemToClone = $(this);
-
-			 for(var i=1; i<4; i++){
-			   itemToClone = itemToClone.next();
-				 // wrap around if at end of item collection
-				 if (!itemToClone.length){
-				   itemToClone = $(this).siblings(':first');
-				 }
-
-				 // grab item, clone, add marker class, add to collection
-				 itemToClone.children(':first-child').clone()
-				 .addClass("cloneditem-"+(i))
-				 .appendTo($(this));
-				 }
-				 });
-    </script>
-
-  </head>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+   </script>
+ </head>

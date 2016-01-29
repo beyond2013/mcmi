@@ -1,55 +1,55 @@
 <!-- Navigation -->
-         <nav class="navbar navbar-static-top" role="navigation">
-          <div id="container">
-           <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-		    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    </button>
-		    <a class="navbar-brand" href="index.html">MCMI</a>
-	    </div><!-- navbar-header -->
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> 
-      	    <ul class="nav nav-tabs navbar-right">
-              {% assign my_pages = site.pages | sort:"weight"  %}
-                {% for pages in my_pages %}
-		{%if pages.title != "Home" %}
-                    {% if pages.url == page.url %}
-		    <li class="active" role="presentation">
-                      <a href="{{ pages.url | prepend: site.baseurl }}" class="active">
-             	        {{ pages.title }}
-                      </a>
-                       </li>
-                       {% else %}
-		       <li role="presentation">
-                       <a href="{{ pages.url | prepend: site.baseurl }}">
-              	        {{ pages.title }}
-                      </a>
-		      </li>
-                      {% endif %}
-		      {% endif %} 
-                {% endfor %}
-              </ul>
-          </div> <!-- /.collapse navbar-collapse -->
-      </div> <!-- container -->  
-        </nav>
+<nav class="navbar navbar-static-top" role="navigation">
+	<div id="container">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="index.html">MCMI</a>
+		</div><!-- navbar-header -->
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> 
+			<ul class="nav nav-tabs navbar-right">
+				{% assign my_pages = site.pages | sort:"weight"  %}
+				{% for pages in my_pages %}
+				{%if pages.title != "Home" %}
+				{% if pages.url == page.url %}
+				<li class="active" role="presentation">
+				<a href="{{ pages.url | prepend: site.baseurl }}" class="active">
+					{{ pages.title }}
+				</a>
+				</li>
+				{% else %}
+				<li role="presentation">
+				<a href="{{ pages.url | prepend: site.baseurl }}">
+					{{ pages.title }}
+				</a>
+				</li>
+				{% endif %}
+				{% endif %} 
+				{% endfor %}
+			</ul>
+		</div> <!-- /.collapse navbar-collapse -->
+	</div> <!-- container -->  
+</nav>
 {% if page.title != "Home" %}
 <!-- Page Heading/Breadcrumbs -->
 <div class = "container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header"> {{page.title}}
-                    <!-- <small>Subheading</small> -->
-                </h1>
-                <ol class="breadcrumb">
-                    <li><a href="{{ site.baseurl }}/index.html">Home</a>
-                    </li>
-                    <li class="active">{{ page.title }}</li>
-                </ol>
-            </div>
-        </div>   <!-- /.row -->
-        <div>    <!-- /.container -->
- {% endif %}
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header"> {{page.title}}
+				<!-- <small>Subheading</small> -->
+			</h1>
+			<ol class="breadcrumb">
+				<li><a href="{{ site.baseurl }}/index.html">Home</a>
+				</li>
+				<li class="active">{{ page.title }}</li>
+			</ol>
+		</div>
+	</div>   <!-- /.row -->
+	<div>    <!-- /.container -->
+		{% endif %}
