@@ -1,61 +1,60 @@
 ---
 layout: default
-title: Home 
+title: home 
 weight: 10
+slideshow:
+- image_path: "{{ site.baseurl }}/assets/images/1.jpg"
+  caption: Event Management
+- image_path: "{{ site.baseurl }}/assets/images/2.jpg"
+  caption: Trainings
+- image_path: "{{ site.baseurl }}/assets/images/3.jpg"
+  caption: Leisure
+- image_path: "{{ site.baseurl }}/assets/images/4.jpg"
+  caption: Sports
 ---
-<!-- Header Carousel -->
-    <header id="myCarousel" class="carousel slide">
-      <!-- Indicators -->
+<!-- header carousel -->
+    <header id="mycarousel" class="carousel slide">
+			<!-- indicators -->
         <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-            <li data-target="#myCarousel" data-slide-to="3"></li>
+					{% for item in page.slideshow %}
+					  {% if forloop.index == 1 %}
+					    <li data-target="#mycarousel" data-slide-to="{{ forloop.index0 }}" class="active"></li>
+					  {% else %}
+					    <li data-target="#mycarousel" data-slide-to="{{ forloop.index0 }}"> </li> 
+					  {% endif %}
+					{% endfor %}
         </ol>
-
-        <!-- Wrapper for slides -->
+        <!-- wrapper for slides -->
         <div class="carousel-inner">
-            <div class="item active">
-               <div class="fill" style="background-image:url('{{ site.baseurl }}/assets/images/SlideOne');"></div>
+					{% for item in page.slideshow %}
+					  {% if forloop.index == 1 %}
+              <div class="item active">
+						{% else %}
+							<div class = "item" >
+						{% endif %}
+						<img src=item.image_path  alt="{{ item.caption }}"> 
                 <div class="carousel-caption">
-                    <h2>Event Management</h2>
+									<h2>{{ item.caption }}</h2>
                 </div>
-            </div>
-            <div class="item">
-                <div class="fill" style="background-image:url('{{ site.baseurl }}/assets/images/SlideTwo');"></div>
-                <div class="carousel-caption">
-                    <h2>Trainings</h2>
-                </div>
-            </div>
-            <div class="item">
-                <div class="fill" style="background-image:url('{{ site.baseurl }}/assets/images/SlideThree');"></div>
-                <div class="carousel-caption">
-                    <h2>Sports</h2>
-                </div>
-            </div>
-            <div class="item">
-                <div class="fill" style="background-image:url('{{ site.baseurl }}/assets/images/SlideFour');"></div>
-                <div class="carousel-caption">
-                    <h2>Leisure</h2>
-                </div>
-            </div>
-        </div>
+							</div> <!--/.item  -->
+						{% endfor %}
+					</div> <!--/.carousel-inner -->
 
-        <!-- Controls -->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <!-- controls -->
+        <a class="left carousel-control" href="#mycarousel" data-slide="prev">
             <span class="icon-prev"></span>
         </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <a class="right carousel-control" href="#mycarousel" data-slide="next">
             <span class="icon-next"></span>
         </a>
   </header>
   <div class ="container">
 <div class="row">
   <div class="col-lg-12">
-   <h1 class="page-header" > Welcome to {{site.title}} (MCMI) </h1>
-   <p> MCMI plan, organize and implement professional
+   <h1 class="page-header" > welcome to {{site.title}} (mcmi) </h1>
+   <p> mcmi plan, organize and implement professional
 development training programmes, meetings, seminars, study visits, 
-conferences, and sports and leisure activities. MCMI provides services
+conferences, and sports and leisure activities. mcmi provides services
  for diverse ranges of customers.
    </p>
   </div>
