@@ -1,60 +1,63 @@
-  <head>
-    <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{{ site.description }}"/>
-    <meta name="keywords" content= "{{site.keywords}}" />
-    <meta name="robots" content="index,follow"/>
-    <!-- Bootstrap Core CSS -->
-    <link href="{{ site.baseurl }}assets/css/bootstrap.min.css" rel="stylesheet">
+<head>
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="{{ site.description }}"/>
+<meta name="keywords" content= "{{site.keywords}}" />
+<meta name="robots" content="index,follow"/>
+<!-- Bootstrap Core CSS -->
+<link href="{{ site.baseurl }}assets/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link href="{{ site.baseurl }}assets/css/modern-business.css" rel="stylesheet">
-    <link href="{{ site.baseurl }}assets/css/nav.css" rel="stylesheet" type="text/css">
+<!-- Custom CSS -->
+<link href="{{ site.baseurl }}assets/css/modern-business.css" rel="stylesheet">
+<link href="{{ site.baseurl }}assets/css/nav.css" rel="stylesheet" type="text/css">
 
-    <!-- Fonts -->
-   <link href="{{ site.baseurl }}assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+<!-- Fonts -->
+<link href="{{ site.baseurl }}assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+				<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+				<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
 
-    <title>
-	  {% if page.title %}
-		{{ page.title }}
-	  {% else %}
-		{{ site.title }}
-	  {% endif %}
-    </title>
-    <meta name="description" content="{% if page.excerpt %}
-		  {{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-		  
-	<!-- jQuery -->
-    <script src="{{ site.baseurl }}assets/js/jquery.js"></script>
+<title>
+	{% if page.title %}
+	{{ page.title }}
+	{% else %}
+	{{ site.title }}
+	{% endif %}
+</title>
+<meta name="description" content="{% if page.excerpt %}
+{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="{{ site.baseurl }}assets/js/bootstrap.min.js"></script>
+<!-- jQuery -->
+<script src="{{ site.baseurl }}assets/js/jquery.js"></script>
 
-    <!-- Script to Activate the Carousel -->
-    <script>
-    $('.carousel').carousel({
-        interval: 5000 //changes the speed
-    });
-    $('.carousel .item').each(function(){
-      var next = $(this).next();
-      if (!next.length) {
-        next = $(this).siblings(':first');
-      }
-      next.children(':first-child').clone().appendTo($(this));
-      for (var i=0;i<2;i++) {
-        next=next.next();
-        if (!next.length) {
-        	next = $(this).siblings(':first');
-  	}
-        next.children(':first-child').clone().appendTo($(this));
-      }
-      });
-   </script>
- </head>
+<!-- Bootstrap Core JavaScript -->
+<script src="{{ site.baseurl }}assets/js/bootstrap.min.js"></script>
+
+<!-- Script to Activate the Carousel -->
+<script>
+$('#myCarousel').carousel({
+interval: 5000 //changes the speed
+});
+$('.carousel .item').each(function(){
+  var next = $(this).next();
+  if (!next.length) {
+    next = $(this).siblings(':first');
+  }
+  next.children(':first-child').clone().appendTo($(this));
+
+  if (next.next().length>0) {
+ 
+      next.next().children(':first-child').clone().appendTo($(this)).addClass('rightest');
+      
+  }
+  else {
+      $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+     
+  }
+});
+</script>
+</head>
