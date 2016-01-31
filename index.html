@@ -1,20 +1,11 @@
 ---
 layout: default
-title: Home 
+title: Home
 weight: 10
-slideshow:
-- image_path: "assets/images/1"
-  caption: Event Management
-- image_path: "assets/images/2"
-  caption: Trainings
-- image_path: "assets/images/3"
-  caption: Leisure
-- image_path: "assets/images/4"
-  caption: Sports
 ---
-  <!-- Header Carousel -->
+<!-- Header Carousel -->
     <header id="myCarousel" class="carousel slide">
-        <!-- Indicators -->
+      <!-- Indicators -->
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -25,31 +16,31 @@ slideshow:
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item active">
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide One');"></div>
+               <div class="fill" style="background-image:url('{{ site.baseurl }}/assets/images/SlideOne');"></div>
                 <div class="carousel-caption">
                     <h2>Event Management</h2>
                 </div>
             </div>
             <div class="item">
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');"></div>
+                <div class="fill" style="background-image:url('{{ site.baseurl }}/assets/images/SlideTwo');"></div>
                 <div class="carousel-caption">
                     <h2>Trainings</h2>
                 </div>
             </div>
             <div class="item">
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
-                <div class="carousel-caption">
-                    <h2>Leisure</h2>
-                </div>
-            </div>
-            <div class="item">
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
+                <div class="fill" style="background-image:url('{{ site.baseurl }}/assets/images/SlideThree');"></div>
                 <div class="carousel-caption">
                     <h2>Sports</h2>
                 </div>
             </div>
+            <div class="item">
+                <div class="fill" style="background-image:url('{{ site.baseurl }}/assets/images/SlideFour');"></div>
+                <div class="carousel-caption">
+                    <h2>Leisure</h2>
+                </div>
+            </div>
         </div>
-       
+
         <!-- Controls -->
         <a class="left carousel-control" href="#myCarousel" data-slide="prev">
             <span class="icon-prev"></span>
@@ -57,28 +48,30 @@ slideshow:
         <a class="right carousel-control" href="#myCarousel" data-slide="next">
             <span class="icon-next"></span>
         </a>
-    </header>
+  </header>
+  <div class ="container">
 <div class="row">
-  <div class="col-md-12">
-   <h1 class="page-header" > WELCOME TO {{site.title}} (MCMI) </h1>
+  <div class="col-lg-12">
+   <h1 class="page-header" > Welcome to {{site.title}} (MCMI) </h1>
    <p> MCMI plan, organize and implement professional
 development training programmes, meetings, seminars, study visits, 
 conferences, and sports and leisure activities. MCMI provides services
  for diverse ranges of customers.
    </p>
+  </div>
    {% for post in site.posts %}
    <div class="col-md-6">
    <div class="panel panel-info"> 
 	   <div class="panel-heading">
 		   <div class="panel-title">
-	       <h4> {{ post.title }} </h4>
+
+	   <h3> {{ post.title }} </h3>
 		   </div> <!-- panel-title -->
 	   </div> <!-- panel-heading -->
 	   <div class="panel-body">
-	   <p align="justify"> {{ post.desc }} </p>
+	   <p> {{ post.desc }} </p>
 	   </div> <!-- panel-body -->
+
    </div> <!-- panel panel-info -->
    </div> <!-- col-md-6 -->
    {% endfor %}
- </div> <!--/. col-md-12 -->
- </div> <!--/.row -->
