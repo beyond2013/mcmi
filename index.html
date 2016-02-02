@@ -2,103 +2,71 @@
 layout: default
 title: Home
 weight: 10
+slideshow:
+ - src: "assets/images/1"
+ - src: "assets/images/2"
+ - src: "assets/images/3"
+ - src: "assets/images/4"
+ - src: "assets/images/5"
+ - src: "assets/images/6"
+ - src: "assets/images/7"
+ - src: "assets/images/8"
 ---
 <!-- Header Carousel -->
 <header>
-	<div class="msg"> </div>
-<!--	<ol class="carousel-indicators">
-		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-		<li data-target="#myCarousel" data-slide-to="1"></li>
-		<li data-target="#myCarousel" data-slide-to="2"></li>
-	</ol> 
--->
 
 	<!-- Wrapper for slides -->
-<div class="container">
-	<div class="col-md-12"> 
-		<div class="carousel slide" id="myCarousel" >
-			<div class="carousel-inner">
-				<div class="item active">
-					<div class="col-xs-3">
-						<a href="#"><img src="{{ site.baseurl}}/assets/images/1" class="img-responsive"></a>
-					</div>
-				</div>
-				<div class="item">
-					<div class="col-xs-3">
-						<a href="#"><img src="{{ site.baseurl}}/assets/images/2" class="img-responsive"></a>
-					</div>
-				</div>
+	<div class="container">
+		<div class="col-md-12"> 
+			<div class="carousel slide" id="myCarousel" >
+				<div class="carousel-inner">
+					{% for image in page.slideshow %}
+					{% if forloop.first %}
+					<div class="item active">
+						{% else %}
+						<div class="item">
+							{% endif %}
+							<div class="col-xs-3">
+								<a href="#"><img src= "{{ site.baseurl }}/{{ image.src }}" class="img-responsive"></a>
+							</div>
+						</div>
+						{% endfor %}
+					</div><!-- carousel inner -->
+					<!-- Controls -->
 
-				<div class="item">
-					<div class="col-xs-3">
-						<a href="#"><img src="{{ site.baseurl}}/assets/images/3" class="img-responsive"></a>
-					</div>
-				</div>
-				<div class="item">
-					<div class="col-xs-3">
-						<a href="#"><img src="{{ site.baseurl}}/assets/images/4" class="img-responsive"></a>
-					</div>
-				</div>
-
-				<div class="item">
-					<div class="col-xs-3">
-						<a href="#"><img src="{{ site.baseurl}}/assets/images/5" class="img-responsive"></a>
-					</div>
-				</div>
-
-				<div class="item">
-					<div class="col-xs-3">
-						<a href="#"><img src="{{ site.baseurl}}/assets/images/6" class="img-responsive"></a>
-					</div>
-				</div>
-
-				<div class="item">
-					<div class="col-xs-3">
-						<a href="#"><img src="{{ site.baseurl}}/assets/images/7" class="img-responsive"></a>
-					</div>
-				</div>
-
-				<div class="item">
-					<div class="col-xs-3">
-						<a href="#"><img src="{{ site.baseurl}}/assets/images/8" class="img-responsive"></a>
-					</div>
-				</div>
-			</div><!-- carousel inner -->
-			<!-- Controls -->
-
-			<a class="left carousel-control" href="#myCarousel" data-slide="prev">
-				<span class="icon-prev"></span>
-			</a>
-			<a class="right carousel-control" href="#myCarousel" data-slide="next">
-				<span class="icon-next"></span>
-			</a>
-		</div> <!-- carousel slide -->
-	</div> <!-- col-md-12  -->
-</div> <!-- /.container openning tag mcmi/index.html -->
-</header>
-<div class ="container">
-	<div class="row">
-		<div class="col-lg-12">
-			<h1 class="page-header" > Welcome to {{site.title}} (MCMI) </h1>
-			<p> MCMI plan, organize and implement professional
-			development training programmes, meetings, seminars, study visits, 
-			conferences, and sports and leisure activities. MCMI provides services
-			for diverse ranges of customers.
-			</p>
-		</div>
-		{% for post in site.posts %}
-		<div class="col-md-6">
-			<div class="panel panel-info"> 
-				<div class="panel-heading">
-					<div class="panel-title">
-						<h3> {{ post.title }} </h3>
-					</div> <!-- panel-title -->
-				</div> <!-- panel-heading -->
-				<div class="panel-body">
-					<p> {{ post.desc }} </p>
-				</div> <!-- panel-body -->
-			</div> <!-- panel panel-info -->
-		</div> <!-- col-md-6 -->
-		{% endfor %}
-	</div> <!-- /.row openning tag in mcmi/index.html -->
-</div> <!-- /.container openning tag in mcmi/index.html--> 
+					<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+						<span class="icon-prev"></span>
+					</a>
+					<a class="right carousel-control" href="#myCarousel" data-slide="next">
+						<span class="icon-next"></span>
+					</a>
+				</div> <!-- carousel slide -->
+			</div> <!-- col-md-12  -->
+		</div> <!-- /.container openning tag mcmi/index.html -->
+	</header>
+	<div class ="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 class="page-header" > Welcome to {{site.title}} (MCMI) </h1>
+				<p> MCMI plan, organize and implement professional
+				development training programmes, meetings, seminars, study visits, 
+				conferences, and sports and leisure activities. MCMI provides services
+				for diverse ranges of customers.
+				</p>
+			</div>
+			{% for post in site.posts %}
+			<div class="col-md-6">
+				<div class="panel panel-info"> 
+					<div class="panel-heading">
+						<div class="panel-title">
+							<h3> {{ post.title }} </h3>
+						</div> <!-- panel-title -->
+					</div> <!-- panel-heading -->
+					<div class="panel-body">
+						<p> {{ post.desc }} </p>
+					</div> <!-- panel-body -->
+				</div> <!-- panel panel-info -->
+			</div> <!-- col-md-6 -->
+			{% endfor %}
+		</div> <!-- /.row openning tag in mcmi/index.html -->
+	</div> <!-- /.container openning tag in mcmi/index.html--> 
