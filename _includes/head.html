@@ -44,7 +44,7 @@ $('#myCarousel').carousel({
 
 interval: 5000 //changes the speed
 });
-$('.carousel-inner .item').each(function(){
+$('.carousel .item').each(function(){
   var next = $(this).next();
   if (!next.length) {
     next = $(this).siblings(':first');
