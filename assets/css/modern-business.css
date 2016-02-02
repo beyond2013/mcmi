@@ -45,10 +45,10 @@ header.carousel .fill {
 .carousel-inner .active.left { left: -33%; }
 .carousel-inner .next        { left:  33%; }
 .carousel-inner .prev        { left: -33%; }
-.carousel-control.left,.carousel-control.right {background-image:none;}
-.item:not(.prev) {visibility: visible;}
-.item.right:not(.prev) {visibility: hidden;}
-.rightest{ visibility: visible;}
+.carousel-control {width: 4%; }
+.carousel-control.left,
+.carousel-control.right {
+margin-left: 15px; background-image:none;}
 /* 404 Page Styles */
 
 .error-404 {

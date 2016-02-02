@@ -12,6 +12,12 @@
 <link href="{{ site.baseurl }}assets/css/modern-business.css" rel="stylesheet">
 <link href="{{ site.baseurl }}assets/css/nav.css" rel="stylesheet" type="text/css">
 
+<!-- jQuery -->
+<script src="http://code.jquery.com/jquery-2.0.0.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="{{ site.baseurl }}assets/js/bootstrap.min.js"></script>
+
 <!-- Fonts -->
 <link href="{{ site.baseurl }}assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -31,15 +37,11 @@
 <meta name="description" content="{% if page.excerpt %}
 {{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
-<!-- jQuery -->
-<script src="{{ site.baseurl }}assets/js/jquery.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="{{ site.baseurl }}assets/js/bootstrap.min.js"></script>
-
 <!-- Script to Activate the Carousel -->
-<script>
+<script type="text/javascript">
+$(document).ready(function(){
 $('#myCarousel').carousel({
+
 interval: 5000 //changes the speed
 });
 $('.carousel .item').each(function(){
@@ -48,16 +50,16 @@ $('.carousel .item').each(function(){
     next = $(this).siblings(':first');
   }
   next.children(':first-child').clone().appendTo($(this));
-
-  if (next.next().length>0) {
- 
-      next.next().children(':first-child').clone().appendTo($(this)).addClass('rightest');
-      
+  
+  for (var i=0;i<2;i++) {
+    next=next.next();
+    if (!next.length) {
+    	next = $(this).siblings(':first');
+  	}
+    
+    next.children(':first-child').clone().appendTo($(this));
   }
-  else {
-      $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
-     
-  }
+});
 });
 </script>
 </head>
