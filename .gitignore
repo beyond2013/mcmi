@@ -5,3 +5,4 @@ Gemfile.lock
 .gitignore
 .jekyll-metadata
 *.html.swp
+./assets/images/jpg/*
